@@ -1,5 +1,5 @@
 <template>
-  <div id="pull-up-block" class="pullUp">
+  <div id="pull-up-block" class="pull-up">
     <div class="heading">
       <span class="upload-text">UPLOAD</span
       ><a @click="closePopup" class="close-icn">X</a>
@@ -84,10 +84,10 @@ export default {
 };
 </script>
   
-  <style >
-/* pullUp Styling */
+  <style lang="scss">
+/* pull-up Styling */
 
-.pullUp {
+.pull-up {
   width: 100vw;
   margin: 0 auto;
   background-color: #fff;
@@ -105,49 +105,49 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-}
+  &.show {
+    transform: translateY(0px);
+    bottom: 45vh;
+  }
+  &.hide {
+    transform: translateY(0px);
+    bottom: 0vh;
+  }
 
-.pullUp.show {
-  transform: translateY(0px);
-  bottom: 45vh;
-}
-.pullUp.hide {
-  transform: translateY(0px);
-  bottom: 0vh;
-}
-.btn-block {
-  display: flex;
-  justify-content: center;
-}
-.btn-block .text {
-  font-size: 14px;
-  text-transform: capitalize;
-}
-.upload-btn {
-  width: 125px;
-  height: 100px;
-  padding: 10px;
-  margin: 10px;
-  border-radius: 10px;
-  color: #000;
-  border: 0px;
-  background: #f2f3f5;
-}
+  .btn-block {
+    display: flex;
+    justify-content: center;
+    .text {
+      font-size: 14px;
+      text-transform: capitalize;
+    }
+  }
+  .upload-btn {
+    width: 125px;
+    height: 100px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    color: #000;
+    border: 0px;
+    background: #f2f3f5;
+    svg {
+      width: 55px;
+      fill: #555;
+    }
+  }
 
-.upload-btn svg{
-  width: 55px;
-  fill: #555;
-}
-.heading {
-  padding-top: 30px;
-  padding-bottom: 20px;
-}
-.heading .upload-text {
-  padding-left: 20px;
-}
-.heading .close-icn {
-  padding-right: 20px;
-  float: right;
+  .heading {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    .upload-text {
+      padding-left: 20px;
+    }
+    .close-icn {
+      padding-right: 20px;
+      float: right;
+    }
+  }
 }
 </style>
   
