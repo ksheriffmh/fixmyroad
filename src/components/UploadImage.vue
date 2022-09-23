@@ -80,14 +80,14 @@ export default {
       document.getElementById("pull-up-block").classList.remove("show");
       document.getElementById("pull-up-block").classList.add("hide");
     },
-    uploadFile(){
+    uploadFile() {
       document.getElementById("pull-up-block").classList.add("hide");
       document.getElementById("location-block").classList.remove("hide");
       document.getElementById("location-block").classList.add("show");
     },
-    openCamera(){
-      console.log('open camera')
-    }
+    openCamera() {
+      console.log("open camera");
+    },
   },
 };
 </script>
@@ -99,7 +99,7 @@ export default {
   width: 100vw;
   margin: 0 auto;
   background-color: #fff;
-  position: relative;
+  position: absolute;
   -webkit-border-top-left-radius: 10px;
   -webkit-border-top-right-radius: 10px;
   -moz-border-radius-topleft: 10px;
@@ -115,11 +115,11 @@ export default {
   justify-content: flex-end;
   &.show {
     transform: translateY(0px);
-    bottom: 45vh;
+    bottom: 0vh;
   }
   &.hide {
     transform: translateY(0px);
-    bottom: 0vh;
+    bottom: -45vh;
   }
 
   .btn-block {

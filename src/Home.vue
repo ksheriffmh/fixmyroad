@@ -11,18 +11,21 @@
     <button @click="openOptions" class="btn-primary">Report a Case</button>
     <upload-image></upload-image>
     <location></location>
+    <description></description>
   </div>
 </template>
 
 <script>
 import UploadImage from "./components/UploadImage.vue";
 import Location from "./components/Location.vue";
+import Description from "./components/Description.vue";
 
 export default {
   name: "App",
   components: {
     UploadImage,
-    Location
+    Location,
+    Description
   },
   data() {
     return {};
