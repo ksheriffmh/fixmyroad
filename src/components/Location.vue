@@ -80,6 +80,7 @@ export default {
     },
     spotLocation() {
       document.getElementById("location-block").classList.add("hide");
+      document.getElementById("description-block").classList.remove("hide");
       document.getElementById("description-block").classList.add("show");
     },
   },
