@@ -98,11 +98,11 @@
   svg {
     width: 100px;
   }
-}
-.st0 {
-  fill: #fdc20f;
-}
-.st1 {
-  fill: #010101;
+  .st0 {
+    fill: #fdc20f;
+  }
+  .st1 {
+    fill: #010101;
+  }
 }
 </style>
