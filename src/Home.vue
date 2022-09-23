@@ -1,17 +1,22 @@
 <template>
   <div>
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.7973713728347!2d80.24382611535201!3d12.984808218100321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d639e47618b%3A0xaa10fd327e29e31c!2sAscendas%20IT%20Park!5e0!3m2!1sen!2sin!4v1663918126000!5m2!1sen!2sin"
-      id="map-frame"
-      style="border: 0"
-      allowfullscreen="true"
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-    ></iframe>
-    <button @click="openOptions" class="btn-primary">Report a Case</button>
-    <upload-image></upload-image>
-    <location></location>
-    <description></description>
+    <div :class="{ 'd-none': !showSplash }">
+      <splash-screen></splash-screen>
+    </div>
+    <div :class="{ 'd-none': showSplash }">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.7973713728347!2d80.24382611535201!3d12.984808218100321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d639e47618b%3A0xaa10fd327e29e31c!2sAscendas%20IT%20Park!5e0!3m2!1sen!2sin!4v1663918126000!5m2!1sen!2sin"
+        id="map-frame"
+        style="border: 0"
+        allowfullscreen="true"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+      <button @click="openOptions" class="btn-primary">Report a Case</button>
+      <upload-image></upload-image>
+      <location></location>
+      <description></description>
+    </div>
   </div>
 </template>
 
@@ -19,21 +24,28 @@
 import UploadImage from "./components/UploadImage.vue";
 import Location from "./components/Location.vue";
 import Description from "./components/Description.vue";
+import SplashScreen from "./components/SplashScreen.vue";
 
 export default {
   name: "App",
   components: {
     UploadImage,
     Location,
-    Description
+    Description,
+    SplashScreen,
   },
   data() {
-    return {};
+    return {
+      showSplash: true,
+    };
   },
   mounted() {
     let map = document.getElementById("map-frame");
     map.style.width = window.innerWidth.toString() + "px";
     map.style.height = "90vh";
+    setTimeout(() => {
+      this.showSplash = false;
+    }, 2000);
   },
   methods: {
     openOptions() {
@@ -47,7 +59,7 @@ export default {
 
 <style>
 @import url(https://fonts.googleapis.com/css?family=Playfair+Display:700italic|Fauna+One);
-body{
+body {
   margin: 0;
   overflow: hidden;
 }
@@ -74,5 +86,11 @@ body{
   left: 0;
   right: 0;
   bottom: 0;
+}
+.d-none {
+  display: none;
+}
+.d-block {
+  display: block;
 }
 </style>
