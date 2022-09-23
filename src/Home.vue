@@ -11,6 +11,7 @@
     <button @click="openOptions" class="btn-primary">Report a Case</button>
     <upload-image></upload-image>
     <location></location>
+    <user-details></user-details>
     <description></description>
   </div>
 </template>
@@ -19,12 +20,14 @@
 import UploadImage from "./components/UploadImage.vue";
 import Location from "./components/Location.vue";
 import Description from "./components/Description.vue";
+import UserDetails from "./components/UserDetails.vue";
 
 export default {
   name: "App",
   components: {
     UploadImage,
     Location,
+    UserDetails,
     Description
   },
   data() {
