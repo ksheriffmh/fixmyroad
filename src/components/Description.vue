@@ -1,11 +1,14 @@
 <template>
   <div id="description-block" class="description">
     <div class="heading">
-      <span class="description-text">Description</span
-      ><a @click="closePopup" class="close-icn">X</a>
+      <span class="description-text">Description</span>
+      <a @click="closePopup" class="close-icn">X</a>
     </div>
-    <textarea placeholder="Type your description here" class="text-area"></textarea>
-    <button class="go-btn">
+    <textarea
+      placeholder="Type your description here"
+      class="text-area"
+    ></textarea>
+    <button class="go-btn" @click="submit">
       <svg
         version="1.1"
         id="Layer_1"
@@ -31,10 +34,19 @@
       <script>
 export default {
   name: "UploadImage",
+  data() {
+    return {
+      submitted: false,
+    };
+  },
   methods: {
     closePopup() {
+      document.getElementById("map-frame").style.height="90vh";
       document.getElementById("description-block").classList.remove("show");
       document.getElementById("description-block").classList.add("hide");
+    },
+    submit() {
+      console.log("submitted");
     },
   },
 };
@@ -92,11 +104,11 @@ export default {
     border-radius: 10px;
     border: 0;
     line-height: 1.5;
-    &::placeholder{
-        padding: 5px;
-        font-size: 12px;
-        color: #999;
-        line-height: 1.5;
+    &::placeholder {
+      padding: 5px;
+      font-size: 12px;
+      color: #999;
+      line-height: 1.5;
     }
   }
   .go-btn {

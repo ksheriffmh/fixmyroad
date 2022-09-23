@@ -77,6 +77,7 @@ export default {
   name: "UploadImage",
   methods: {
     closePopup() {
+      document.getElementById("map-frame").style.height="90vh";
       document.getElementById("pull-up-block").classList.remove("show");
       document.getElementById("pull-up-block").classList.add("hide");
     },

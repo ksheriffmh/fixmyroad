@@ -33,10 +33,11 @@ export default {
   mounted() {
     let map = document.getElementById("map-frame");
     map.style.width = window.innerWidth.toString() + "px";
-    map.style.height = window.innerHeight.toString() + "px";
+    map.style.height = "90vh";
   },
   methods: {
     openOptions() {
+      document.getElementById("map-frame").style.height = "70vh";
       document.getElementById("pull-up-block").classList.remove("hide");
       document.getElementById("pull-up-block").classList.add("show");
     },
@@ -60,17 +61,18 @@ body{
 .btn-primary {
   font-family: "Montesserat", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
     "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 700;
-  color: #555;
-  background: #fff;
+  font-weight: 500;
+  font-size: 22px;
+  color: #fff;
+  background: #73ddc1;
   border: 0;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
-  width: 86vw;
-  height: 40px;
+  width: 100vw;
+  height: 80px;
   padding: 5px;
   position: absolute;
-  left: 10%;
-  bottom: 10%;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 </style>
