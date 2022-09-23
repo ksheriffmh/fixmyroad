@@ -6,7 +6,7 @@
     </div>
     <div class="btn-block">
       <div>
-        <button class="upload-btn">
+        <button class="upload-btn" @click="openCamera">
           <svg
             version="1.1"
             id="Layer_1"
@@ -38,7 +38,7 @@
         <div class="text">Open Camera</div>
       </div>
       <div>
-        <button class="upload-btn">
+        <button class="upload-btn" @click="uploadFile">
           <svg
             version="1.1"
             id="Layer_1"
@@ -80,6 +80,14 @@ export default {
       document.getElementById("pull-up-block").classList.remove("show");
       document.getElementById("pull-up-block").classList.add("hide");
     },
+    uploadFile(){
+      document.getElementById("pull-up-block").classList.add("hide");
+      document.getElementById("location-block").classList.remove("hide");
+      document.getElementById("location-block").classList.add("show");
+    },
+    openCamera(){
+      console.log('open camera')
+    }
   },
 };
 </script>

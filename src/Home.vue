@@ -10,16 +10,19 @@
     ></iframe>
     <button @click="openOptions" class="btn-primary">Report a Case</button>
     <upload-image></upload-image>
+    <location></location>
   </div>
 </template>
 
 <script>
 import UploadImage from "./components/UploadImage.vue";
+import Location from "./components/Location.vue";
 
 export default {
   name: "App",
   components: {
     UploadImage,
+    Location
   },
   data() {
     return {};
@@ -41,7 +44,8 @@ export default {
 <style>
 @import url(https://fonts.googleapis.com/css?family=Playfair+Display:700italic|Fauna+One);
 body{
-  margin: 0
+  margin: 0;
+  overflow: hidden;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
