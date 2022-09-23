@@ -86,12 +86,14 @@ export default {
   .text-area {
     background: #f2f3f5;
     margin: 25px;
+    padding: 5px;
     height: 30vw;
     width: 80vw;
     border-radius: 10px;
     border: 0;
     line-height: 1.5;
     &::placeholder{
+        padding: 5px;
         font-size: 12px;
         color: #999;
         line-height: 1.5;
