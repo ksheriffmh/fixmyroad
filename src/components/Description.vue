@@ -30,24 +30,27 @@
         </svg>
       </button>
     </div>
-    <div style="display: none" class="success-icn">
-      <svg
-        version="1.1"
-        id="Layer_1"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        x="0px"
-        y="0px"
-        viewBox="0 0 92.2 67.5"
-        style="enable-background: new 0 0 92.2 67.5"
-        xml:space="preserve"
-      >
-        <path
-          class="st0"
-          d="M28.18,66.86c-0.75,0-1.46-0.3-1.99-0.82L1.82,41.66c-1.1-1.1-1.1-2.88,0-3.98c1.1-1.1,2.88-1.1,3.98,0
+    <div style="display: none" class="success-block">
+      <div class="success-icn">
+        <svg
+          version="1.1"
+          id="Layer_1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px"
+          y="0px"
+          viewBox="0 0 92.2 67.5"
+          style="enable-background: new 0 0 92.2 67.5"
+          xml:space="preserve"
+        >
+          <path
+            class="st0"
+            d="M28.18,66.86c-0.75,0-1.46-0.3-1.99-0.82L1.82,41.66c-1.1-1.1-1.1-2.88,0-3.98c1.1-1.1,2.88-1.1,3.98,0
 	l22.38,22.38L86.42,1.82c1.1-1.1,2.88-1.1,3.98,0c1.1,1.1,1.1,2.88,0,3.98L30.17,66.03C29.65,66.56,28.93,66.86,28.18,66.86z"
-        />
-      </svg>
+          />
+        </svg>
+      </div>
+      <div class="success-text">Your report for pothole is successfully logged !</div>
     </div>
   </div>
 </template>
@@ -68,12 +71,14 @@ export default {
       document.getElementById("description-block").classList.add("hide");
       this.title = "Description";
       document.getElementsByClassName("text-block")[0].style.display = "block";
-      document.getElementsByClassName("success-icn")[0].style.display = "none";
+      document.getElementsByClassName("success-block")[0].style.display =
+        "none";
     },
     submit() {
       this.title = "Success";
       document.getElementsByClassName("text-block")[0].style.display = "none";
-      document.getElementsByClassName("success-icn")[0].style.display = "flex";
+      document.getElementsByClassName("success-block")[0].style.display =
+        "block";
     },
   },
 };
@@ -161,10 +166,16 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: auto;
+    margin-right: auto;
     svg {
       width: 30px;
       height: 30px;
     }
+  }
+  .success-text{
+    width: 80vw;
+    padding-top: 20px;
   }
 }
 </style>
