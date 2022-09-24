@@ -53,7 +53,6 @@ export default {
   },
   methods: {
     openOptions() {
-      document.getElementById("map-frame").style.height = "70vh";
       document.getElementById("pull-up-block").classList.remove("hide");
       document.getElementById("pull-up-block").classList.add("show");
     },

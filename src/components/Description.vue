@@ -195,6 +195,9 @@ export default {
     width: 80vw;
     padding-top: 20px;
   }
+  .success-block {
+    margin: 25px 0px 25px 0px;
+  }
 }
 </style>
       
