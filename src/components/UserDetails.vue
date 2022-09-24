@@ -5,8 +5,9 @@
       <a @click="closePopup" class="close-icn">X</a>
     </div>
     <div class="text-name">
-      <input type="text" class="user-name" placeholder="Your Name" />
-      <input type="number" class="user-num" placeholder="Your Number" />
+      <input type="text" class="user-name" placeholder="Your Name" v-model="userName" />
+      <input type="number" class="user-num" placeholder="Your Number" v-model="userNumber" @keyup="validatePhoneNumber"/>
+      <span v-if="!isValidPhoneNumber">Invalid Phone Number</span>
       <!-- <div class="toggle-text">
         <span> Keep me Anonymous </span>
         <label class="switch">
@@ -14,7 +15,7 @@
           <span class="slider round"></span>
         </label>
       </div> -->
-      <button class="continue-btn" @click="submit">Continue</button>
+      <button class="continue-btn" :disabled="isValidPhoneNumber===false" @click="submit">Continue</button>
     </div>
   </div>
 </template>
@@ -25,6 +26,9 @@ export default {
   data() {
     return {
       title: "Your Information",
+      userName: '',
+      userNumber: '',
+      isValidPhoneNumber: true,
       submitted: false,
     };
   },
@@ -37,10 +41,21 @@ export default {
       document.getElementsByClassName("text-block")[0].style.display = "block";
       document.getElementsByClassName("success-icn")[0].style.display = "none";
     },
+    validatePhoneNumber() {
+      const validationRegex = /^\d{10}$/;
+      if (this.userNumber.toString().match(validationRegex)) {
+        this.isValidPhoneNumber = true;
+      } else {
+        this.isValidPhoneNumber = false;
+      }
+      console.log(this.isValidPhoneNumber);
+    },
     submit() {
       document.getElementById("user-details-block").classList.add("hide");
       document.getElementById("description-block").classList.remove("hide");
       document.getElementById("description-block").classList.add("show");
+      sessionStorage.setItem('userName', this.userName);
+      sessionStorage.setItem('phoneNumber', this.userNumber);
     },
   },
 };

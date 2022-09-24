@@ -7,8 +7,7 @@
     <div class="text-block">
       <textarea
         placeholder="Type your description here"
-        class="text-area"
-      ></textarea>
+        class="text-area" v-model="description"></textarea>
       <button class="go-btn" @click="submit">
         <svg
           version="1.1"
@@ -62,6 +61,7 @@ export default {
     return {
       title: "Description",
       submitted: false,
+      description: '',
     };
   },
   methods: {
@@ -88,8 +88,14 @@ export default {
           imageId: sessionStorage.getItem('imageId'),
           imageURL: sessionStorage.getItem('imageURL')
         },
+        descriptionValue: this.description,
+        userDetails: {
+          userName: sessionStorage.getItem('userName'),
+          phoneNumber: sessionStorage.getItem('phoneNumber')
+        },
       };
-      console.log(finalData);
+      console.log(this.description);
+      console.log(JSON.stringify(finalData));
       alert(JSON.stringify(finalData))
     },
   },
