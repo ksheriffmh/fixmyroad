@@ -102,7 +102,7 @@ export default {
     }
   }
   .text-name {
-    margin: 13px 25px 50px 25px;
+    margin: 10px 25px 40px 25px;
     padding: 5px;
     height: 30vw;
     width: 90vw;
