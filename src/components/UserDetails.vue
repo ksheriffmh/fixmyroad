@@ -7,7 +7,7 @@
     <div class="text-name">
       <input type="text" class="user-name" placeholder="Your Name" v-model="userName" />
       <input type="number" class="user-num" placeholder="Your Number" v-model="userNumber" @keyup="validatePhoneNumber"/>
-      <span v-if="!isValidPhoneNumber">Invalid Phone Number</span>
+      <span class="error-message" v-if="!isValidPhoneNumber">Enter the valid phone number</span>
       <!-- <div class="toggle-text">
         <span> Keep me Anonymous </span>
         <label class="switch">
@@ -15,7 +15,7 @@
           <span class="slider round"></span>
         </label>
       </div> -->
-      <button class="continue-btn" :disabled="isValidPhoneNumber===false" @click="submit">Continue</button>
+      <button :class="isValidPhoneNumber ? 'continue-btn' : 'disabled-btn'" :disabled="isValidPhoneNumber===false" @click="submit">Continue</button>
     </div>
   </div>
 </template>
@@ -28,7 +28,7 @@ export default {
       title: "Your Information",
       userName: '',
       userNumber: '',
-      isValidPhoneNumber: true,
+      isValidPhoneNumber: false,
       submitted: false,
     };
   },
@@ -93,7 +93,7 @@ export default {
   }
 
   .heading {
-    padding-top: 25px;
+    padding-top: 25px 25px 12px 25px;
     padding-bottom: 15px;
     width: 100vw;
     .user-details-text {
@@ -105,15 +105,14 @@ export default {
     }
   }
   .text-name {
-    margin: 25px;
+    margin: 13px 25px 50px 25px;
     padding: 5px;
     height: 30vw;
     width: 90vw;
     border-radius: 10px;
     border: 0;
     line-height: 1.5;
-    .user-name,
-    .user-num {
+    .user-name {
       width: 100%;
       display: inline-block;
       border-radius: 10px;
@@ -121,6 +120,18 @@ export default {
       box-sizing: border-box;
       margin-bottom: 8px;
       border: 1px solid #f2f3f5;
+    }
+    .user-num {
+      width: 100%;
+      display: inline-block;
+      border-radius: 10px;
+      padding: 14px;
+      box-sizing: border-box;
+      border: 1px solid #f2f3f5;
+    }
+    .error-message {
+      font-size: 12px;
+      color: #FF9494;
     }
     .toggle-text {
         display: flex;
@@ -134,6 +145,24 @@ export default {
     font-size: 22px;
     color: #fff;
     background: #73ddc1;
+    border: 0;
+    border-radius: 4px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+    width: 90vw;
+    height: 60px;
+    padding: 5px;
+    position: absolute;
+    left: 20px;
+    right: 0;
+    bottom: 10px;
+  }
+  .disabled-btn {
+    font-family: "Montesserat", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+      "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    color: #fff;
+    background: grey;
     border: 0;
     border-radius: 4px;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
