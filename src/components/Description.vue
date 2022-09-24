@@ -7,7 +7,9 @@
     <div class="text-block">
       <textarea
         placeholder="Type your description here"
-        class="text-area" v-model="description"></textarea>
+        class="text-area"
+        v-model="description"
+      ></textarea>
       <button class="go-btn" @click="submit">
         <svg
           version="1.1"
@@ -49,19 +51,24 @@
           />
         </svg>
       </div>
-      <div class="success-text">Your report for pothole is successfully logged !</div>
+      <div class="success-text">
+        Your report for pothole is successfully logged ! Your Case ID is
+        {{ this.id }}
+      </div>
     </div>
   </div>
 </template>
       
       <script>
+import writeUserData from "../Service.js";
 export default {
   name: "UploadImage",
   data() {
     return {
       title: "Description",
       submitted: false,
-      description: '',
+      description: "",
+      id: "",
     };
   },
   methods: {
@@ -79,24 +86,24 @@ export default {
       document.getElementsByClassName("text-block")[0].style.display = "none";
       document.getElementsByClassName("success-block")[0].style.display =
         "block";
+      this.id = sessionStorage.getItem("imageId");
       const finalData = {
+        id: { imageId: this.id },
         coordinates: {
-          latitude: sessionStorage.getItem('latitude'),
-          longitude: sessionStorage.getItem('longitude')
+          latitude: sessionStorage.getItem("latitude"),
+          longitude: sessionStorage.getItem("longitude"),
         },
         imgDetails: {
-          imageId: sessionStorage.getItem('imageId'),
-          imageURL: sessionStorage.getItem('imageURL')
+          imageId: this.id,
+          imageURL: sessionStorage.getItem("imageURL"),
         },
         descriptionValue: this.description,
         userDetails: {
-          userName: sessionStorage.getItem('userName'),
-          phoneNumber: sessionStorage.getItem('phoneNumber')
+          userName: sessionStorage.getItem("userName"),
+          phoneNumber: sessionStorage.getItem("phoneNumber"),
         },
       };
-      console.log(this.description);
-      console.log(JSON.stringify(finalData));
-      alert(JSON.stringify(finalData))
+      writeUserData(finalData, this.id);
     },
   },
 };
@@ -191,7 +198,7 @@ export default {
       height: 30px;
     }
   }
-  .success-text{
+  .success-text {
     width: 80vw;
     padding-top: 20px;
   }

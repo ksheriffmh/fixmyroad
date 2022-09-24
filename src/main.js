@@ -12,7 +12,8 @@ const firebaseConfig = {
   projectId: "fixmyroad-1db86",
   storageBucket: "fixmyroad-1db86.appspot.com",
   messagingSenderId: "282885597864",
-  appId: "1:282885597864:web:89d1182f603a3a7351f09d"
+  appId: "1:282885597864:web:89d1182f603a3a7351f09d",
+  databaseURL: "https://fixmyroad-1db86-default-rtdb.asia-southeast1.firebasedatabase.app/",
 };
 
 // Initialize Firebase
