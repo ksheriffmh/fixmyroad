@@ -65,7 +65,9 @@ export default {
 @import url(https://fonts.googleapis.com/css?family=Playfair+Display:700italic|Fauna+One);
 body {
   margin: 0;
-  overflow: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

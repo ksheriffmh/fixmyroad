@@ -68,6 +68,7 @@ export default {
       // this.uploadToServer(formData); //--> upload the file to server
       this.closePopup();
       alert("Image uploaded successfully!");
+      document.getElementById("map-frame").style.height = "70vh";
       document.getElementById("location-block").classList.remove("hide");
       document.getElementById("location-block").classList.add("show");
     },

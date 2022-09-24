@@ -100,7 +100,7 @@ export default {
   border-top-right-radius: 10px;
   transform: translateY(89vh);
   transition: all 0.5s ease-in-out;
-  padding-bottom: 60px;
+  padding-bottom: 20px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -116,7 +116,7 @@ export default {
   }
 
   .heading {
-    padding-top: 30px;
+    padding-top: 25px;
     padding-bottom: 20px;
     width: 100vw;
     .description-text {
@@ -129,7 +129,7 @@ export default {
   }
   .text-area {
     background: #f2f3f5;
-    margin: 25px;
+    margin: 10px;
     padding: 5px;
     height: 30vw;
     width: 80vw;
