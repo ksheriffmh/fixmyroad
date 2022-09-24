@@ -133,6 +133,7 @@ export default {
     .toggle-text {
         display: flex;
         justify-content: space-between;
+        margin-top: 7px;
         .isuser {
           width: 16px;
           height: 16px;
