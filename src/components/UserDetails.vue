@@ -8,10 +8,6 @@
       <input type="text" class="user-name" placeholder="Your Name" v-model="userName" />
       <input type="number" class="user-num" placeholder="Your Number" v-model="userNumber" @keyup="validatePhoneNumber"/>
       <span class="error-message" v-if="!isValidPhoneNumber">Enter the valid phone number</span>
-      <div class="toggle-text">
-        <span> Keep me Anonymous </span>
-        <input type="checkbox" id="myCheck" value="myvalue" class="isuser">
-      </div>
       <button :class="isValidPhoneNumber ? 'continue-btn' : 'disabled-btn'" :disabled="isValidPhoneNumber===false" @click="submit">Continue</button>
     </div>
   </div>
@@ -90,7 +86,7 @@ export default {
   }
 
   .heading {
-    padding: 25px 25px 15px 25px;
+    padding: 15px 25px 15px 25px;
     width: 100vw;
     font-weight: 700;
     .user-details-text {
@@ -102,7 +98,7 @@ export default {
     }
   }
   .text-name {
-    margin: 10px 25px 40px 25px;
+    margin: 0px 25px 37px 25px;
     padding: 5px;
     height: 30vw;
     width: 90vw;
