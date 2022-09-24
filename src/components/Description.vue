@@ -90,6 +90,7 @@ export default {
         },
       };
       console.log(finalData);
+      alert(JSON.stringify(finalData))
     },
   },
 };
