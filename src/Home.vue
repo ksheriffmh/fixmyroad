@@ -12,7 +12,7 @@
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
-      <button @click="openOptions" class="btn-primary">Report a Case</button>
+      <button @click="openOptions" class="btn-primary" id="report-btn">Report a Case</button>
     </div>
     <upload-image></upload-image>
     <location></location>
@@ -53,7 +53,9 @@ export default {
   },
   methods: {
     openOptions() {
+      document.getElementById("map-frame").style.height = "60vh";
       document.getElementById("pull-up-block").classList.remove("hide");
+      document.getElementById("report-btn").classList.add("d-none");
       document.getElementById("pull-up-block").classList.add("show");
     },
   },

@@ -78,6 +78,7 @@ export default {
       document.getElementById("map-frame").style.height="90vh";
       document.getElementById("location-block").classList.remove("show");
       document.getElementById("location-block").classList.add("hide");
+      document.getElementById("report-btn").classList.remove("d-none");
     },
     spotLocation() {
       document.getElementById("location-block").classList.add("hide");
@@ -115,7 +116,6 @@ export default {
   justify-content: flex-end;
   &.show {
     transform: translateY(0px);
-    bottom: 0vh;
   }
   &.hide {
     transform: translateY(0px);
@@ -148,6 +148,7 @@ export default {
   .heading {
     padding-top: 30px;
     padding-bottom: 20px;
+    font-weight: 700;
     .location-text {
       padding-left: 20px;
     }

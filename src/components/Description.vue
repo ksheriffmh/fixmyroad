@@ -6,28 +6,9 @@
     </div>
     <div class="text-block">
       <textarea
-        placeholder="Type your description here"
+        placeholder="Description of the incident..."
         class="text-area" v-model="description"></textarea>
-      <button class="go-btn" @click="submit">
-        <svg
-          version="1.1"
-          id="Layer_1"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          x="0px"
-          y="0px"
-          viewBox="0 0 16.77 28.4"
-          style="enable-background: new 0 0 16.77 28.4"
-          xml:space="preserve"
-        >
-          <path
-            class="st0"
-            d="M3.96,1.51c-0.68-0.68-1.78-0.68-2.45,0C0.84,2.19,0.83,3.27,1.47,3.95l0.04,0.04l10.34,10.45L1.51,24.9
-	c-0.66,0.67-0.68,1.75-0.04,2.44l0.04,0.04c0.66,0.67,1.73,0.68,2.41,0.04l0.04-0.04l11.57-11.69c0.66-0.67,0.68-1.75,0.04-2.44
-	l-0.04-0.04L3.96,1.51z"
-          />
-        </svg>
-      </button>
+        <button class='continue-btn' @click="submit">Submit</button>
     </div>
     <div style="display: none" class="success-block">
       <div class="success-icn">
@@ -69,6 +50,7 @@ export default {
       document.getElementById("map-frame").style.height = "90vh";
       document.getElementById("description-block").classList.remove("show");
       document.getElementById("description-block").classList.add("hide");
+      document.getElementById("report-btn").classList.remove("d-none");
       this.title = "Description";
       document.getElementsByClassName("text-block")[0].style.display = "block";
       document.getElementsByClassName("success-block")[0].style.display =
@@ -126,7 +108,6 @@ export default {
   align-items: center;
   &.show {
     transform: translateY(0px);
-    bottom: 0vh;
   }
   &.hide {
     transform: translateY(0px);
@@ -137,6 +118,7 @@ export default {
     padding-top: 25px;
     padding-bottom: 20px;
     width: 100vw;
+    font-weight: 700;
     .description-text {
       padding-left: 20px;
     }
@@ -145,13 +127,31 @@ export default {
       float: right;
     }
   }
+
+  .continue-btn {
+    font-family: "Montesserat", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+      "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    color: #fff;
+    background: #73ddc1;
+    border: 0;
+    border-radius: 4px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+    width: 90vw;
+    height: 60px;
+    padding: 5px;
+    left: 20px;
+    right: 0;
+    bottom: 10px;
+  }
   .text-area {
     background: #f2f3f5;
     margin: 10px;
     padding: 5px;
     height: 30vw;
-    width: 80vw;
-    border-radius: 10px;
+    width: 85vw;
+    border-radius: 5px;
     border: 0;
     line-height: 1.5;
     &::placeholder {

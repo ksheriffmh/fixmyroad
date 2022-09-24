@@ -54,6 +54,7 @@ export default {
       document.getElementById("map-frame").style.height = "90vh";
       document.getElementById("pull-up-block").classList.remove("show");
       document.getElementById("pull-up-block").classList.add("hide");
+      document.getElementById("report-btn").classList.remove("d-none");
     },
 
     uploadFile() {
@@ -74,7 +75,8 @@ export default {
       reader.readAsDataURL(files);
 
       alert("Image uploaded successfully!");
-      document.getElementById("map-frame").style.height = "70vh";
+      document.getElementById("map-frame").style.height = "60vh";
+      document.getElementById("pull-up-block").classList.remove("show");
       document.getElementById("location-block").classList.remove("hide");
       document.getElementById("location-block").classList.add("show");
     },
@@ -108,7 +110,6 @@ export default {
 
   &.show {
     transform: translateY(0px);
-    bottom: 0vh;
   }
 
   &.hide {
@@ -119,7 +120,6 @@ export default {
   .btn-block {
     display: flex;
     justify-content: center;
-
     .text {
       font-size: 14px;
       text-transform: capitalize;
@@ -145,6 +145,7 @@ export default {
   .heading {
     padding-top: 30px;
     padding-bottom: 20px;
+    font-weight: 700;
 
     .upload-text {
       padding-left: 20px;
