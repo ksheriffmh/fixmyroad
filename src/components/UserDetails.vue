@@ -133,7 +133,6 @@ export default {
     .toggle-text {
         display: flex;
         justify-content: space-between;
-        margin-top: 7px;
         .isuser {
           width: 16px;
           height: 16px;
@@ -156,7 +155,7 @@ export default {
     position: absolute;
     left: 20px;
     right: 0;
-    bottom: 10px;
+    bottom: 20px;
   }
   .disabled-btn {
     font-family: "Montesserat", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
@@ -174,7 +173,7 @@ export default {
     position: absolute;
     left: 20px;
     right: 0;
-    bottom: 10px;
+    bottom: 20px;
   }
 }
 </style>
