@@ -61,12 +61,18 @@ export default {
       fileInputElement.click();
     },
 
-    downloadImage(event) {
-      const files = event.target.files;
-      const formData = new FormData();
-      formData.append(event.target.name || 'newfile', files[0], files[0].name);
-      // this.uploadToServer(formData); //--> upload the file to server
-      this.closePopup();
+    async downloadImage(event) {
+      let files = event.target.files[0];
+      console.log(typeof files);
+      
+      let reader = new FileReader();
+      reader.onload = function(base64) {
+        const fileId = `Case_${Math.floor(1 + Math.random() * (100000 - 1))}`;
+        sessionStorage.setItem('imageId', fileId);
+        sessionStorage.setItem('imageURL', base64.target.result);
+      }
+      reader.readAsDataURL(files);
+
       alert("Image uploaded successfully!");
       document.getElementById("map-frame").style.height = "70vh";
       document.getElementById("location-block").classList.remove("hide");

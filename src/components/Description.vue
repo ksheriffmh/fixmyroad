@@ -79,6 +79,17 @@ export default {
       document.getElementsByClassName("text-block")[0].style.display = "none";
       document.getElementsByClassName("success-block")[0].style.display =
         "block";
+      const finalData = {
+        coordinates: {
+          latitude: sessionStorage.getItem('latitude'),
+          longitude: sessionStorage.getItem('longitude')
+        },
+        imgDetails: {
+          imageId: sessionStorage.getItem('imageId'),
+          imageURL: sessionStorage.getItem('imageURL')
+        },
+      };
+      console.log(finalData);
     },
   },
 };

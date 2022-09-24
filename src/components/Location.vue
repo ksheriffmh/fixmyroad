@@ -83,6 +83,10 @@ export default {
       document.getElementById("location-block").classList.add("hide");
       document.getElementById("user-details-block").classList.remove("hide");
       document.getElementById("user-details-block").classList.add("show");
+      navigator.geolocation.getCurrentPosition(position => {
+        sessionStorage.setItem('latitude', position.coords.latitude);
+        sessionStorage.setItem('longitude', position.coords.longitude);
+      });
     },
   },
 };
