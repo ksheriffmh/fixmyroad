@@ -96,7 +96,7 @@
   align-content: center;
   justify-content: center;
   svg {
-    width: 100px;
+    width: 35vw;
   }
   .st0 {
     fill: #fdc20f;

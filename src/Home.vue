@@ -5,7 +5,7 @@
     </div>
     <div :class="{ 'd-none': showSplash }">
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.7973713728347!2d80.24382611535201!3d12.984808218100321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d639e47618b%3A0xaa10fd327e29e31c!2sAscendas%20IT%20Park!5e0!3m2!1sen!2sin!4v1663918126000!5m2!1sen!2sin"
+        src="https://maps.google.com/maps?q=12.9847401,80.2459132&hl=en&z=14&amp;output=embed"
         id="map-frame"
         style="border: 0"
         allowfullscreen="true"
